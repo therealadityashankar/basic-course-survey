@@ -29,10 +29,11 @@ h1{
 .survey-parts{
     text-align: center;
     padding: 30px 50px;
-    border-radius: 5px;
-    background: rgba(0,0,0,0.1);
+    border-radius: 15px;
+    background: rgb(24, 84, 113);
     max-width: 600px;
     margin: 60px auto;
+    margin-bottom: 0;
 }
 
 input[type="text"]{

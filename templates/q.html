@@ -12,22 +12,28 @@
   <div> <b>5</b><br> You could do this course with a little bit of difficulty in session <b>A/B</b>, with a 40 hr work week job, with 1 other subject of the same difficulty</div><br>
   <div> <b>10</b><br> You could do this course with a little bit of difficulty in session <b>C</b>, with a 40 hr work week job, with no other subject of the same difficulty</div><br>
   <br><br>
-  <label>Rating<br>
-    <input type="number" name="rating" required max=10 min=1><br>
+  <label><b>Rating</b></label>
   <br>
-  <label>Would you recommend session A/B for this course or session C</label>
+  {% for i in range(1, 11) %}
+    <label> {{i}}
+      <input type="radio" name="rating" value={{i}} required>
+    </label>
+  {% endfor %}
+  <br>
+  <br>
+  <label>Would you recommend <b>session A/B</b> or <b>session C</b> for this course</label>
   <br>
   <label>Session A/B
-    <input type="radio" name="session_recommend" value="session A/B">
+    <input type="radio" name="session_recommend" value="session A/B" required>
   </label>
   <label>Session C
-    <input type="radio" name="session_recommend" value="session C">
+    <input type="radio" name="session_recommend" value="session C" required>
   </label>
   <input type="hidden" name="user_email" value="{{user_email}}">
   <input type="hidden" name="curr_course" value="{{curr_course}}">
   <br><br>
   <input type="submit" value="Next">
   <br><br>
-  <a href="./?user_name={{user_email}}&curr_course={{next_course}}">Skip Quesion</a>
+  <a href="./?user_name={{user_email}}&curr_course={{next_course}}">Skip Quesion/I did not do this course</a>
 </form>  
 {% endblock form_q %}
