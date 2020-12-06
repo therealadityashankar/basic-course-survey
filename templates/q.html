@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block form_q %}
-<form id="name-form">
+<form id="name-form" method="post">
   <div><b>For the course</b></div>
   <h3><u>{{curr_course_name}}</u></h3>
   <hr>
@@ -10,14 +10,24 @@
   <div> <b>1</b><br> so easy that you could do 5 such courses in session <b>A/B</b> with ease with a 40 hour work week job </div><br>
   <div> <b>4</b><br> You could do this course with a little bit of difficulty in session <b>A/B</b>, with a 40 hr work week job, with 2 other subjects of the same difficulty</div><br>
   <div> <b>5</b><br> You could do this course with a little bit of difficulty in session <b>A/B</b>, with a 40 hr work week job, with 1 other subject of the same difficulty</div><br>
-  <div> <b>10</b><br> You could do this course with a little bit of difficulty in session <b>C</b>, with a 40 hr work week job, with 1 other subject of the same difficulty</div><br>
+  <div> <b>10</b><br> You could do this course with a little bit of difficulty in session <b>C</b>, with a 40 hr work week job, with no other subject of the same difficulty</div><br>
   <br><br>
-  <label>Rating: <br>
+  <label>Rating<br>
     <input type="number" name="rating" required max=10 min=1><br>
   <br>
-  <input type="hidden" name="curr-course" value="{{next_course}}">
+  <label>Would you recommend session A/B for this course or session C</label>
+  <br>
+  <label>Session A/B
+    <input type="radio" name="session-recommend" value="session A/B">
+  </label>
+  <label>Session C
+    <input type="radio" name="session-recommend" value="session C">
+  </label>
+  <input type="hidden" name="user_name" value="{{user_name}}">
+  <input type="hidden" name="curr_course" value="{{curr_course}}">
+  <br><br>
   <input type="submit" value="Next">
   <br><br>
-  <a href="./?user-name={{user_name}}&curr-course={{next_course}}">Skip Quesion</a>
+  <a href="./?user_name={{user_name}}&curr_course={{next_course}}">Skip Quesion</a>
 </form>  
 {% endblock form_q %}
