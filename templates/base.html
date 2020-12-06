@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>📚 Software Engineering Course Survey</title>
+    <link rel="stylesheet" href="./static/index.css" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="everything" class="dark-mode">
+      <h1>📚 Course Survey</h1>
+      <div class="survey-parts">
+        <div>
+          {% block form_q %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    <script src="./static/index.js" charset="utf-8"></script>
+  </body>
+</html>

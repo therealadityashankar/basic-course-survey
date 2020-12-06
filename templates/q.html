@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block form_q %}
+<form id="name-form">
+  <div><b>For the course</b></div>
+  <h3><u>{{curr_course_name}}</u></h3>
+  <hr>
+  <div> How tough is this course on a scale of 1 to 10 ? </div>
+  <br>
+  <div> <b>1</b><br> so easy that you could do 5 such courses in session <b>A/B</b> with ease with a 40 hour work week job </div><br>
+  <div> <b>4</b><br> You could do this course with a little bit of difficulty in session <b>A/B</b>, with a 40 hr work week job, with 2 other subjects of the same difficulty</div><br>
+  <div> <b>5</b><br> You could do this course with a little bit of difficulty in session <b>A/B</b>, with a 40 hr work week job, with 1 other subject of the same difficulty</div><br>
+  <div> <b>10</b><br> You could do this course with a little bit of difficulty in session <b>C</b>, with a 40 hr work week job, with 1 other subject of the same difficulty</div><br>
+  <br><br>
+  <label>Rating: <br>
+    <input type="number" name="rating" required max=10 min=1><br>
+  <br>
+  <input type="hidden" name="curr-course" value="{{next_course}}">
+  <input type="submit" value="Next">
+  <br><br>
+  <a href="./?user-name={{user_name}}&curr-course={{next_course}}">Skip Quesion</a>
+</form>  
+{% endblock form_q %}

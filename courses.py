@@ -1,0 +1,12 @@
+courses = ["ASU 101", "ENG 101", "ENG 107",
+           "FSE 100", "CSE 110", "ENG 102",
+           "ENG 108", "CSE 205", "MAT 265",
+           "SER 232", "MAT 266", "MAT 243",
+           "CSE 230", "CSE 240", "MAT 267",
+           "MAT 275", "SER 222", "EGR 104",
+           "EGR 280", "SER 216", "MAT 343",
+           "SER 315", "SER 334", "PHY 121",
+           "PHY 122", "SER 321", "SER 316",
+           "SER 335", "SER 415", "SER 322",
+           "SER 416", "SER 401", "HST 318",
+           "SER 402"]
