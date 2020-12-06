@@ -1,4 +1,5 @@
 from flask import Flask, render_template, session, request, redirect, url_for
+from google.cloud import firestore
 from courses import courses
 
 app = Flask(__name__)
@@ -34,6 +35,18 @@ def main():
     else:
         curr_course = int(request.form["curr_course"])
         user_name   = request.form["user_name"]
+        session_rec = request.form["session_recommend"]
+        rating = request.form["rating"]
+
+        db = firestore.Client()
+        doc_ref = db.collection("survey-data").document(user_name)
+        doc_ref.set({
+            "session-recommendation" : session_rec,
+            "difficulty rating": rating
+        })
+
+        if curr_course == len(courses) - 1:
+            return "You've completed the survey, you'll now recieve the ultimare reward I, Aditya Shankar, can give..., I hereby admit python is not greater than Java"
 
         # some processing for storing information over here
         return redirect(url_for(f"main", user_name=user_name, curr_course=curr_course + 1))
