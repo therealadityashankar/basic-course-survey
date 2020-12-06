@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block form_q %}
-<form id="name-form" method="post">
+<form id="email-form" method="post">
   <div><b>For the course</b></div>
-  <h3><u>{{curr_course_name}}</u></h3>
+  <h3><u>{{curr_course_email}}</u></h3>
   <hr>
   <div> How tough is this course on a scale of 1 to 10 ? </div>
   <br>
@@ -23,11 +23,11 @@
   <label>Session C
     <input type="radio" name="session_recommend" value="session C">
   </label>
-  <input type="hidden" name="user_name" value="{{user_name}}">
+  <input type="hidden" name="user_email" value="{{user_email}}">
   <input type="hidden" name="curr_course" value="{{curr_course}}">
   <br><br>
   <input type="submit" value="Next">
   <br><br>
-  <a href="./?user_name={{user_name}}&curr_course={{next_course}}">Skip Quesion</a>
+  <a href="./?user_name={{user_email}}&curr_course={{next_course}}">Skip Quesion</a>
 </form>  
 {% endblock form_q %}
