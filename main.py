@@ -39,8 +39,11 @@ def main():
         rating = request.form["rating"]
 
         db = firestore.Client()
-        doc_ref = db.collection("survey-data").document(user_name)
-        doc_ref.set({
+        collection = db.collection("survey-data")
+        collection.add({
+            "user":user_name,
+            "course_num":curr_course,
+            "course":courses[curr_course],
             "session-recommendation" : session_rec,
             "difficulty rating": rating
         })
