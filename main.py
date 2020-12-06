@@ -21,6 +21,9 @@ def main():
         except ValueError:
             return "Malformed url", 400
 
+        if curr_course == len(courses):
+            return "You've completed the survey, you'll now recieve the ultimate reward I, Aditya Shankar, can give..., I hereby admit python is not greater than Java"
+
         if not (curr_course >= 0 and curr_course < len(courses)):
             return "invalid curr course index", 400
 
@@ -55,8 +58,6 @@ def main():
             "insertion time": datetime.datetime.now()
         })
 
-        if curr_course == len(courses) - 1:
-            return "You've completed the survey, you'll now recieve the ultimare reward I, Aditya Shankar, can give..., I hereby admit python is not greater than Java"
 
         # some processing for storing information over here
         return redirect(url_for(f"main", user_email=user_email, curr_course=curr_course + 1))
